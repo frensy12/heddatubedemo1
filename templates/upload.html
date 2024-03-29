@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video</title>
+</head>
+<body>
+    <h1>Last opp videoer</h1>
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <label for="file">Velg en video:</label>
+        <input type="file" id="file" name="file" accept=".mp4, .webm, .ogg" required>
+        <br>
+        <label for="title">Video Tittel:</label>
+        <input type="text" id="title" name="title" required>
+        <input type="text" id="hashtags" name="hashtags" placeholder="Hashtags på videon (du må ikke ha dette, men det er best og ha dette.)">
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

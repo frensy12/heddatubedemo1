@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeddaTube</title>
+    <style>
+        h1 {
+            font-size: 75.5px;
+            text-align: center;
+            font-family: Verdana;
+        }
+
+
+        img {
+            width: 150px;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 13px;
+
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        a {
+            font-size: 38.4px;
+            
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h1>HeddaTube DEMO</h1>
+    <ul>
+        {% for video, thumbnail in videos %}
+            <li>
+                <p>{{ video }}</p>
+                <a href="/videos/{{ video }}">
+                    <img src="{{ url_for('thumbnail', filename=thumbnail) }}" alt="Thumbnail">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload') }}">Post en video</a>
+</body>
+</html>
